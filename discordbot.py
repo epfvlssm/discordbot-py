@@ -9,6 +9,9 @@ load_dotenv()
 PREFIX = os.environ['PREFIX']
 TOKEN = os.environ['TOKEN']
 
+intents = discord.Intents.default()
+intents.message_content = True
+
 client = discord.Client(intents=intents) # client 생성. 디스코드와 연결
 
 # 콜백 스타일: 콜백은 기본적으로는 무엇인가 일어났을때 호출되는 기능
@@ -41,6 +44,9 @@ async def on_message(message): # 봇이 메시지를 받았을 때 호출됩니�
             if first_keyword == '다이스':
                 dice_result = str(random.randint(1,100))
                 await message.channel.send(f'다이스를 굴리자... <{dice_result}>이 나왔다.', reference=message) # 답장 o
-    
 
-client.run(TOKEN)
+
+try:
+    client.run(TOKEN)
+except discord.errors.LoginFailure as e:
+    print("Improper token has been passed.")
