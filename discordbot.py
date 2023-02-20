@@ -31,7 +31,11 @@ async def on_message(message):
         await message.channel.send(f'{message.author.display_name}, 안녕하세요!', reference=message)  # 답장
     elif message.content.startswith('%다이스'):  # 메세지가 dice로 시작하는 경우
         dice_result = str(random.randint(1, 100))  # 1~100 랜덤 선택 (1d100)
-        await message.channel.send(f'도르르륵, 주사위의 눈은… <{dice_result}>!', reference=message)  # 답장 o
+        embed = discord.Embed(
+        description = '도르르륵, 주사위의 눈은…'
+        )
+        embed.add_field(name = dice_result, value=' ', inline=False)
+        await message.channel.send(embed=embed, reference = message)
     elif message.content.startswith('%가챠'):  # 메세지가 ❈가챠 로 시작하는 경우
         dice_result = str(random.choice(
             ['모르는 이름이 써진 네임택', '티 타임용 쿠키세트', '작은 씨앗', '챙 넓은 모자', '고래 인형', '워터볼', '검은 강아지 인형', '동화책 [어느 숲속 이야기]', '텔 원석',
