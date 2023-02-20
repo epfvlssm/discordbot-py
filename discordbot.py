@@ -54,7 +54,7 @@ async def on_message(message):
           description = Text .strip(),
           colour = discord.Color.purple()
         )
-          await message.channel.send(embed=embed)        
+          await message.channel.send(embed=embed, reference = message)        
     elif message.content.startswith("❈복권"):
           Text = ""
           number = [1, 2, 3, 4, 5, 6, 7] # 배열크기 선언해줌
@@ -152,7 +152,7 @@ async def on_message(message):
          colour = discord.Color.purple()
          )
          embed.add_field(name = Text, value = Text2, inline=False)
-         await message.channel.send(embed=embed)          
+         await message.channel.send(embed=embed, reference = message)          
     else:
         start = message.content.find('[')
         end = message.content.find(']')
