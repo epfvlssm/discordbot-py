@@ -41,8 +41,20 @@ async def on_message(message):
              '편지지 세트', '알록달록한 펜', '애벌레 인형', '발냄새 나는 양말', '새하얀 깃털', '붕대', '누가 사탕', '민트초코맛 치약', '피젯큐브', '들장미 화관', '은색 반지', '네모나고 반듯한 돌', '카라쿠리 퍼즐', '종이 비행기', '계약서와 도장', '크롭티', '무지개색 조개껍데기', '묵주', '팬 라이트', '화려한 귀걸이', '별모양 드림캐쳐', '십자수 세트', '초콜릿 쿠키 만들기 키트', '도수가 높은 안경']))  # 1~100 랜덤 선택 (1d100)
         await message.channel.send(f'달각 달각, 가챠 기계에서 나온 것은…… <{dice_result}>…!', reference=message)  # 답장 o
     elif message.content.startswith('%슬롯머신'):
-          await message.channel.send(f'현재 슬롯머신은 점검중입니다.', reference=message)
-        
+          SlotMachine = [ '🐋', '🍺', '🍇', '🃏','7️⃣', ':tomato:', ':strawberry:', ':eggplant:', ':apple:', ':pineapple:', ':lemon:', ':melon:', ':kiwi:', ':snake:', ':hatched_chick:', ':gift:', ':star2:', ':tangerine:']
+          sFirst = random.choice(SlotMachine)
+          sSecond = random.choice(SlotMachine)
+          sThird = random.choice(SlotMachine)
+          Text = '' 
+          Text =Text + sFirst
+          Text =Text + sSecond
+          Text =Text + sThird
+
+          embed = discord.Embed(
+          description = Text .strip(),
+          colour = discord.Color.purple()
+        )
+          await message.channel.send(embed=embed)        
     elif message.content.startswith("❈복권"):
           Text = ""
           number = [1, 2, 3, 4, 5, 6, 7] # 배열크기 선언해줌
