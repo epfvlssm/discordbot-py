@@ -108,6 +108,29 @@ async def on_message(message):
           embed.add_field(name="%동전", value="동전의 앞면과 뒷면 중 한가지를 보여줍니다.", inline=False)
           embed.add_field(name="%노래방", value="0점부터 100점 사이의 점수를 랜덤으로 출력합니다. 당신의 노래 실력을 뽐내보세요.", inline=False)
           await message.channel.send(embed=embed)
+    elif message.content.startswith('%노래방'):
+         score = random.randrange(0,100)
+
+         if score == 100:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 환상적인 목소리! 당신이~ 👍***짱***이랍니다~', reference = message)
+         elif score <= 99 and score >= 95:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 노래를 너~어무 잘불러서 카두케우스 ***기절!***🤩', reference = message)
+         elif score <= 94 and score >= 90:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 한곡 더~ 듣고 싶은 실력! **불↘러→줄↘꺼↗죠↗??**🎤', reference = message)
+         elif score <= 89 and score >= 85:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 이렇게 잘 부를수가?!😃 매~력이~ 넘쳐요~', reference = message)
+         elif score <= 84 and score >= 80:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 카두케우스 완~전 **두근!** 🥰정말 멋져요~~', reference = message)
+         elif score <= 79 and score >= 70:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 목소리에~ 매력이 철철~ 하트💜하트💜~', reference = message)
+         elif score <= 69 and score >= 60:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 지금 딱 좋아요!!😉 그 느낌으로 한! 곡! 더!!', reference = message)
+         elif score <= 59 and score >= 50:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 점수는 점수일 뿐. 즐거우면 100점이죠~😌', reference = message)
+         elif score <= 49 and score >= 10:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 너~~어 노래에 조금만 더 ***집!중!*** 🙁', reference = message)
+         elif score <= 9 and score >= 0:
+           await message.channel.send(f'당신의 점수는! 두구두구… {score}점! 이 점수! 어쩌면 좋지? 진짜 모르게쒀요오~ 😯', reference = message)         
     else:
         start = message.content.find('[')
         end = message.content.find(']')
