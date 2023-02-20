@@ -41,12 +41,7 @@ async def on_message(message):
              '편지지 세트', '알록달록한 펜', '애벌레 인형', '발냄새 나는 양말', '새하얀 깃털', '붕대', '누가 사탕', '민트초코맛 치약', '피젯큐브', '들장미 화관', '은색 반지', '네모나고 반듯한 돌', '카라쿠리 퍼즐', '종이 비행기', '계약서와 도장', '크롭티', '무지개색 조개껍데기', '묵주', '팬 라이트', '화려한 귀걸이', '별모양 드림캐쳐', '십자수 세트', '초콜릿 쿠키 만들기 키트', '도수가 높은 안경']))  # 1~100 랜덤 선택 (1d100)
         await message.channel.send(f'달각 달각, 가챠 기계에서 나온 것은…… <{dice_result}>…!', reference=message)  # 답장 o
     elif message.content.startswith('%슬롯머신'):
-          SlotMachine = [ '🐋', '🍺', '🍇', '🃏','7️⃣', ':tomato:', ':strawberry:', ':eggplant:', ':apple:', ':pineapple:', ':lemon:', ':melon:', ':kiwi:', ':snake:', ':hatched_chick:', ':gift:', ':star2:', ':tangerine:']
-          sFirst = random.choice(SlotMachine)
-          sSecond = random.choice(SlotMachine)
-          sThird = random.choice(SlotMachine)
-          print(sFirst + sSecond + sThird)
-          await message.channel.send(f'{sFirst + sSecond + sThird}', reference=message)
+          await message.channel.send(f'현재 슬롯머신은 점검중입니다.', reference=message)
         
     elif message.content.startswith("❈복권"):
           Text = ""
@@ -110,7 +105,8 @@ async def on_message(message):
           embed.add_field(name="%가챠", value="1텔을 소모하여 선지자 후보들의 호불호 아이템을 랜덤으로 뽑습니다.", inline=False)
           embed.add_field(name="%다이스", value="1d100 다이스를 굴립니다.", inline=False)
           embed.add_field(name="%슬롯머신", value="슬롯머신을 돌립니다.잭팟을 노려봅시다!", inline=False)
-          embed.add_field(name="%동전", value="동전의 앞면과 뒷면 중 한가지를 보여줍니다.", inline=False)  
+          embed.add_field(name="%동전", value="동전의 앞면과 뒷면 중 한가지를 보여줍니다.", inline=False)
+          embed.add_field(name="%노래방", value="0점부터 100점 사이의 점수를 랜덤으로 출력합니다. 당신의 노래 실력을 뽐내보세요.", inline=False)
           await message.channel.send(embed=embed)
     else:
         start = message.content.find('[')
