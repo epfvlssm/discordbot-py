@@ -85,13 +85,33 @@ async def on_message(message):
               description=Text.strip(),
               colour=discord.Color.red()
           )
-          await message.channel.send(embed=embed)            
+          await message.channel.send(embed=embed)
+    elif message.content.startswith('%동전'):
+          randomNum = random.randrange(1, 9)
+          print(randomNum)
+          if randomNum == 1:
+              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
+          if randomNum == 2:
+              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))
+          if randomNum ==3:
+              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
+          if randomNum ==4:
+              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))
+          if randomNum ==5:
+              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
+          if randomNum ==6:
+              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))
+          if randomNum ==7:
+              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
+          if randomNum ==8:
+              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))     
     elif message.content.startswith('%이용가이드'):
           embed = discord.Embed(title="가챠봇 이용가이드",description="가챠봇을 이용하기 위한 명령어 키워드들입니다", color=0x00aaaa)
           embed.add_field(name="%가챠", value="1텔을 소모하여 선지자 후보들의 호불호 아이템을 랜덤으로 뽑습니다.", inline=False)
           embed.add_field(name="%다이스", value="1d100 다이스를 굴립니다.", inline=False)
           embed.add_field(name="❈복권", value="카두케우스 복권을 뽑습니다.", inline=False)
           embed.add_field(name="%슬롯머신", value="슬롯머신을 돌립니다.잭팟을 노려봅시다!", inline=False)
+          embed.add_field(name="%동전", value="동전의 앞면과 뒷면 중 한가지를 보여줍니다.", inline=False)  
           await message.channel.send(embed=embed)
     else:
         start = message.content.find('[')
