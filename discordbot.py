@@ -100,7 +100,8 @@ async def on_message(message):
           embed.add_field(name="❈가챠", value="1텔을 소모하여 선지자 후보들의 호불호 아이템을 랜덤으로 뽑습니다.", inline=False)
           embed.add_field(name="❈다이스", value="1d100 다이스를 굴립니다.", inline=False)
           embed.add_field(name="❈복권", value="카두케우스 복권을 뽑습니다.", inline=False)
-          embed.add_field(name="❈슬롯머신", value="슬롯머신을 돌립니다.잭팟을 노려봅시다!", inline=False)        
+          embed.add_field(name="❈슬롯머신", value="슬롯머신을 돌립니다.잭팟을 노려봅시다!", inline=False)
+          await message.channel.send(embed=embed)
     else:
         start = message.content.find('[')
         end = message.content.find(']')
