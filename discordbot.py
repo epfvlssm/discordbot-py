@@ -29,10 +29,10 @@ async def on_message(message):
         await message.channel.send(f'{message.author.mention}, hello!')  # 답장 x
     elif message.content.startswith('❈안녕하세요'):  # 메세지가 #안녕하세요 로 시작하는 경우
         await message.channel.send(f'{message.author.display_name}, 안녕하세요!', reference=message)  # 답장
-    elif message.content.startswith('❈다이스'):  # 메세지가 dice로 시작하는 경우
+    elif message.content.startswith('%다이스'):  # 메세지가 dice로 시작하는 경우
         dice_result = str(random.randint(1, 100))  # 1~100 랜덤 선택 (1d100)
         await message.channel.send(f'다이스를 굴리자... <{dice_result}>이 나왔다.', reference=message)  # 답장 o
-    elif message.content.startswith('❈가챠'):  # 메세지가 ❈가챠 로 시작하는 경우
+    elif message.content.startswith('%가챠'):  # 메세지가 ❈가챠 로 시작하는 경우
         dice_result = str(random.choice(
             ['모르는 이름이 써진 네임택', '티 타임용 쿠키세트', '작은 씨앗', '챙 넓은 모자', '고래 인형', '워터볼', '검은 강아지 인형', '동화책 [어느 숲속 이야기]', '텔 원석',
              '건네 준 사람과의 추억이 재생되는 거울 모양 마도구', '민들레 홀씨', '새장', '모조 다이아', '새하얀 천', '금박장식 비녀', '고사성어 사전', '별자리 무드등',
@@ -40,7 +40,7 @@ async def on_message(message):
              '행운 기원 팔찌', '기념품가게 팔찌', '향수', '화상 연고', '의료용 안대', '목화 다발', '자개 장식', '공단 리본', '레이스가 달린 원피스', '물감', '긴 천',
              '편지지 세트', '알록달록한 펜', '애벌레 인형', '발냄새 나는 양말', '새하얀 깃털', '붕대', '누가 사탕', '민트초코맛 치약', '피젯큐브', '들장미 화관', '은색 반지', '네모나고 반듯한 돌', '카라쿠리 퍼즐', '종이 비행기', '계약서와 도장', '크롭티', '무지개색 조개껍데기', '묵주', '팬 라이트', '화려한 귀걸이', '별모양 드림캐쳐', '십자수 세트', '초콜릿 쿠키 만들기 키트', '도수가 높은 안경']))  # 1~100 랜덤 선택 (1d100)
         await message.channel.send(f'가챠를 굴리자... <{dice_result}>이 나왔다.', reference=message)  # 답장 o
-    elif message.content.startswith('❈슬롯머신'):
+    elif message.content.startswith('%슬롯머신'):
           randomNum = random.randrange(1, 8) # 1~6까지 랜덤수
           print(randomNum)
           if randomNum == 1:
@@ -95,12 +95,12 @@ async def on_message(message):
               colour=discord.Color.red()
           )
           await message.channel.send(embed=embed)            
-    elif message.content.startswith('❈이용가이드'):
+    elif message.content.startswith('%이용가이드'):
           embed = discord.Embed(title="가챠봇 이용가이드",description="가챠봇을 이용하기 위한 명령어 키워드들입니다", color=0x00aaaa)
-          embed.add_field(name="❈가챠", value="1텔을 소모하여 선지자 후보들의 호불호 아이템을 랜덤으로 뽑습니다.", inline=False)
-          embed.add_field(name="❈다이스", value="1d100 다이스를 굴립니다.", inline=False)
+          embed.add_field(name="%가챠", value="1텔을 소모하여 선지자 후보들의 호불호 아이템을 랜덤으로 뽑습니다.", inline=False)
+          embed.add_field(name="%다이스", value="1d100 다이스를 굴립니다.", inline=False)
           embed.add_field(name="❈복권", value="카두케우스 복권을 뽑습니다.", inline=False)
-          embed.add_field(name="❈슬롯머신", value="슬롯머신을 돌립니다.잭팟을 노려봅시다!", inline=False)
+          embed.add_field(name="%슬롯머신", value="슬롯머신을 돌립니다.잭팟을 노려봅시다!", inline=False)
           await message.channel.send(embed=embed)
     else:
         start = message.content.find('[')
