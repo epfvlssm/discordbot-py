@@ -31,7 +31,7 @@ async def on_message(message):
         await message.channel.send(f'{message.author.display_name}, 안녕하세요!', reference=message)  # 답장
     elif message.content.startswith('%다이스'):  # 메세지가 dice로 시작하는 경우
         dice_result = str(random.randint(1, 100))  # 1~100 랜덤 선택 (1d100)
-        await message.channel.send(f'다이스를 굴리자... <{dice_result}>이 나왔다.', reference=message)  # 답장 o
+        await message.channel.send(f'도르르륵, 주사위의 눈은… <{dice_result}>!', reference=message)  # 답장 o
     elif message.content.startswith('%가챠'):  # 메세지가 ❈가챠 로 시작하는 경우
         dice_result = str(random.choice(
             ['모르는 이름이 써진 네임택', '티 타임용 쿠키세트', '작은 씨앗', '챙 넓은 모자', '고래 인형', '워터볼', '검은 강아지 인형', '동화책 [어느 숲속 이야기]', '텔 원석',
@@ -39,24 +39,15 @@ async def on_message(message):
              '「쉽게 배우는 마공학 이론」', '새하얀 양 인형', '실타래', 'SEI☆의 사인지', '무선마이크', '목이 기다란 도마뱀 인형', '공룡이 그려진 동화책', '낡은 누더기 옷',
              '행운 기원 팔찌', '기념품가게 팔찌', '향수', '화상 연고', '의료용 안대', '목화 다발', '자개 장식', '공단 리본', '레이스가 달린 원피스', '물감', '긴 천',
              '편지지 세트', '알록달록한 펜', '애벌레 인형', '발냄새 나는 양말', '새하얀 깃털', '붕대', '누가 사탕', '민트초코맛 치약', '피젯큐브', '들장미 화관', '은색 반지', '네모나고 반듯한 돌', '카라쿠리 퍼즐', '종이 비행기', '계약서와 도장', '크롭티', '무지개색 조개껍데기', '묵주', '팬 라이트', '화려한 귀걸이', '별모양 드림캐쳐', '십자수 세트', '초콜릿 쿠키 만들기 키트', '도수가 높은 안경']))  # 1~100 랜덤 선택 (1d100)
-        await message.channel.send(f'가챠를 굴리자... <{dice_result}>이 나왔다.', reference=message)  # 답장 o
+        await message.channel.send(f'달각 달각, 가챠 기계에서 나온 것은…… <{dice_result}>…!', reference=message)  # 답장 o
     elif message.content.startswith('%슬롯머신'):
-          randomNum = random.randrange(1, 8) # 1~6까지 랜덤수
-          print(randomNum)
-          if randomNum == 1:
-              await message.channel.send(embed=discord.Embed(description=':🎰: '+ ':one:'+ ':one:'+ ':one:'))
-          if randomNum == 2:
-              await message.channel.send(embed=discord.Embed(description=':🎰: ' + ':two:'))
-          if randomNum ==3:
-              await message.channel.send(embed=discord.Embed(description=':🎰: ' + ':three:'))
-          if randomNum ==4:
-              await message.channel.send(embed=discord.Embed(description=':🎰: ' + ':four:'))
-          if randomNum ==5:
-              await message.channel.send(embed=discord.Embed(description=':🎰: ' + ':five:'))
-          if randomNum ==6:
-              await message.channel.send(embed=discord.Embed(description=':🎰: ' + ':six: '))
-          if randomNum ==7:
-              await message.channel.send(embed=discord.Embed(description=':🎰: ' + ':seven: '+ ':seven: '+ ':seven: '))
+          SlotMachine = [ '🐋', '🍺', '🍇', '🃏','7️⃣', ':tomato:', ':strawberry:', ':eggplant:', ':apple:', ':pineapple:', ':lemon:', ':melon:', ':kiwi:', ':snake:', ':hatched_chick:', ':gift:', ':star2:', ':tangerine:']
+          sFirst = random.choice(SlotMachine)
+          sSecond = random.choice(SlotMachine)
+          sThird = random.choice(SlotMachine)
+          print(sFirst + sSecond + sThird)
+          await message.channel.send(f'{sFirst + sSecond + sThird}', reference=message)
+        
     elif message.content.startswith("❈복권"):
           Text = ""
           number = [1, 2, 3, 4, 5, 6, 7] # 배열크기 선언해줌
