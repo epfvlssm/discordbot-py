@@ -121,7 +121,7 @@ async def on_message(message):
           embed.add_field(name="%노래방", value="0점부터 100점 사이의 점수를 랜덤으로 출력합니다. 당신의 노래 실력을 뽐내보세요.", inline=False)
           await message.channel.send(embed=embed)
     elif message.content.startswith('%노래방'):
-         score = random.randrange(0,100)
+         score = random.randrange(0,101)
 
          Text = ' '
          Text = Text + str(score)
