@@ -98,24 +98,13 @@ async def on_message(message):
           )
           await message.channel.send(embed=embed)
     elif message.content.startswith('%동전'):
-          randomNum = random.randrange(1, 9)
-          print(randomNum)
-          if randomNum == 1:
-              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
-          if randomNum == 2:
-              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))
-          if randomNum ==3:
-              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
-          if randomNum ==4:
-              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))
-          if randomNum ==5:
-              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
-          if randomNum ==6:
-              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))
-          if randomNum ==7:
-              await message.channel.send(embed=discord.Embed(description=':coin: '+ '뒷면이 나왔다!'))
-          if randomNum ==8:
-              await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))     
+          randomNum = random.randrange(1,1000)
+          randomNum = randomNum % 2
+          
+          if randomNum == 0:
+              await message.channel.send(embed=discord.Embed(description= ' :coin: ' + '뒷면이 나왔다!'), reference = message)
+          elif randomNum == 1:
+              await message.channel.send(embed=discord.Embed(description= ' :coin: ' + '앞면이 나왔다!'), reference = message)     
     elif message.content.startswith('%이용가이드'):
           embed = discord.Embed(title="가챠봇 이용가이드",description="가챠봇을 이용하기 위한 명령어 키워드들입니다", color=0xbc40fb)
           embed.add_field(name="%가챠", value="선지자 후보들과 직ㆍ간접적으로 연관된 아이템이 등장합니다. 1텔을 소모하여 랜덤 아이템을 하나 얻을 수 있습니다.", inline=False)
