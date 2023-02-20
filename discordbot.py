@@ -102,10 +102,10 @@ async def on_message(message):
               await message.channel.send(embed=discord.Embed(description=':coin: ' + '앞면이 나왔다!'))     
     elif message.content.startswith('%이용가이드'):
           embed = discord.Embed(title="가챠봇 이용가이드",description="가챠봇을 이용하기 위한 명령어 키워드들입니다", color=0xbc40fb)
-          embed.add_field(name="%가챠", value="1텔을 소모하여 선지자 후보들의 호불호 아이템을 랜덤으로 뽑습니다.", inline=False)
+          embed.add_field(name="%가챠", value="선지자 후보들과 직ㆍ간접적으로 연관된 아이템이 등장합니다. 1텔을 소모하여 랜덤 아이템을 하나 얻을 수 있습니다.", inline=False)
           embed.add_field(name="%다이스", value="1d100 다이스를 굴립니다.", inline=False)
-          embed.add_field(name="%슬롯머신", value="슬롯머신을 돌립니다.잭팟을 노려봅시다!", inline=False)
-          embed.add_field(name="%동전", value="동전의 앞면과 뒷면 중 한가지를 보여줍니다.", inline=False)
+          embed.add_field(name="%슬롯머신", value="드르륵 탁. 슬롯머신을 돌립니다. 잭팟을 노려봅시다!", inline=False)
+          embed.add_field(name="%동전", value="앞, 뒤 중 한 가지를 보여줍니다.", inline=False)
           embed.add_field(name="%노래방", value="0점부터 100점 사이의 점수를 랜덤으로 출력합니다. 당신의 노래 실력을 뽐내보세요.", inline=False)
           await message.channel.send(embed=embed)
     elif message.content.startswith('%노래방'):
