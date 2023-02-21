@@ -112,7 +112,7 @@ async def on_message(message):
           embed.add_field(name="%슬롯머신", value="드르륵 탁. 슬롯머신을 돌립니다. 잭팟을 노려봅시다!", inline=False)
           embed.add_field(name="%동전", value="앞, 뒤 중 한 가지를 보여줍니다.", inline=False)
           embed.add_field(name="%노래방", value="0점부터 100점 사이의 점수를 랜덤으로 출력합니다. 당신의 노래 실력을 뽐내보세요.", inline=False)
-          embed.add_field(name="%운세", value="오늘의 운세. 당신의 오늘 운을 시험해보세요.", inline=False)
+          embed.add_field(name="%운세", value="오늘의 운세. 당신의 오늘 운을 시험해보세요. 운세 쪽지는 하루에 한번만 뽑을 수 있습니다.", inline=False)
           await message.channel.send(embed=embed)
     elif message.content.startswith('%노래방'):
          score = random.randrange(0,101)
