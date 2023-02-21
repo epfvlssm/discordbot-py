@@ -112,6 +112,7 @@ async def on_message(message):
           embed.add_field(name="%슬롯머신", value="드르륵 탁. 슬롯머신을 돌립니다. 잭팟을 노려봅시다!", inline=False)
           embed.add_field(name="%동전", value="앞, 뒤 중 한 가지를 보여줍니다.", inline=False)
           embed.add_field(name="%노래방", value="0점부터 100점 사이의 점수를 랜덤으로 출력합니다. 당신의 노래 실력을 뽐내보세요.", inline=False)
+          embed.add_field(name="%운세", value="오늘의 운세. 당신의 오늘 운을 시험해보세요.", inline=False)
           await message.channel.send(embed=embed)
     elif message.content.startswith('%노래방'):
          score = random.randrange(0,101)
@@ -145,7 +146,59 @@ async def on_message(message):
          colour = discord.Color.purple()
          )
          embed.add_field(name = Text, value = Text2, inline=False)
-         await message.channel.send(embed=embed, reference = message)          
+         await message.channel.send(embed=embed, reference = message)
+    elif message.content.startswith('%운세'):
+          fortuneNum = random.randrange(1,1000)
+          fortuneNum = fortuneNum % 14
+
+          if fortuneNum == 0:
+            Text = '대길[大吉]'
+            Text2 = '봄이 되어 봄빛을 손에 쥐며 오래된 가지에도 꽃이 피듯 운세가 열린다. 구름 사다리와 같이 오르기 힘든 곳까지도 오를 수 있게 된다.'
+          elif fortuneNum == 1:
+            Text = '길[吉]'
+            Text2 = '봄이 되면 말도 기운이 솟아 뛰어다니는 것처럼 차차 운이 다가온다. 하늘에서부터 행운이 당신을 향해 다가와, 무엇이든 생각하는 대로 될 것.'
+          elif fortuneNum == 2:
+            Text = '중길[中吉]'
+            Text2 = '대전환의 운기. 길흉이 혼연하여 공사 모두 매우 바쁘며 고생도 많은 시기이다. 그러나 참고 버티어 똑똑히 방향을 확인하고 나아가면 응당한 결과가 따를 것이다.'
+          elif fortuneNum == 3:
+            Text = '소길[小吉]'
+            Text2 = '변화가 많을 운기이다. 마음을 정직하게 하여, 만사에 침착하고 남들에게 사랑받는 사람이 되면 모든 일에 좋을 것이다.'
+          elif fortuneNum == 4:
+            Text = '말소길[末小吉]'
+            Text2 = '치우치지 않고 올바른 길을 가면 길은 열린다. 그러나 올바른 사람일수록 간사한 이로부터 방해를 받아 잘못을 일으키기도 한다. 마음을 가라앉히고 믿음을 가질 것.'
+          elif fortuneNum == 5:
+            Text = '반길[半吉]'
+            Text2 = '이제까지 사소한 실수의 훼방으로 인해 일이 풀리지 않았다. 그러나 앞으로는 차츰차츰 일이 풀릴 조짐이 있다. 잘못을 뉘우치고 복을 빌면 결국은 운도 열릴 것이다.'
+          elif fortuneNum == 6:
+            Text = '말길[末吉]'
+            Text2 = '가진 물건이 다하여, 다시 시작하는 모습이므로 소원은 이루워질 것이다. 성급히 서두르는 것은 좋지 않다.'
+          elif fortuneNum == 7:
+            Text = '평[平]'
+            Text2 = '언제나와 같은 길이다. 길이 되는가 흉이 되는가는 자신에게 있으므로, 스스로를 굳게 믿는 것이 좋다.'
+          elif fortuneNum == 8:
+            Text = '말흉[末凶]'
+            Text2 = '대전환의 운기. 공사 모두 바쁘며 고생도 많은 시기이다. 운이 틔지 않아 일이 뜻대로 풀리지 않고 엉뚱한 곳으로 튀기도 한다. 참고 버티어 중심을 잡는 것이 좋다.'
+          elif fortuneNum == 9:
+            Text = '반흉[半凶]'
+            Text2 = '과거의 잘못이 들춰지고, 지금껏 되어오던 일에 사소한 실수나 훼방이 끼어들어 일이 풀리지 않기 시작한다. 잘못을 뉘우치고 이상의 우를 범하지 않도록 해야한다.'
+          elif fortuneNum == 10:
+            Text = '소흉[小凶]'
+            Text2 = '가진 물건이 다한 모습이다. 성급히 서두르다가 일을 망칠 수 있으니 몸가짐을 조심하고 여유를 갖는 것이 좋다.'
+          elif fortuneNum == 11:
+            Text = '흉[凶]'
+            Text2 = '만사에 바람직하지 못한 곳에서 근심에 빠지는가 하면 매사를 어렵게 만드는 습성이 있으니 운이 틔기 어렵다. 작은 일에 유념하면서 몸가짐을 조심하는 것이 좋다.'
+          elif fortuneNum == 12:
+            Text = '대흉[大凶]'
+            Text2 = '모든 나뭇잎이 떨어지고 그 위에 새하얀 눈이 덮이듯, 운이 보이지 않는다. 경거망동 하지 않고 기다리는 것 밖에는 도리가 없다.'
+          elif fortuneNum == 13:
+            Text = '2텔?!'
+            Text2 = '운세 종이 대신에 텔이 나왔다!'
+          embed = discord.Embed(
+                title = "오늘의 운세"
+                )
+          
+          embed.add_field(name = Text, value = Text2, inline=False)
+          await message.channel.send(embed=embed, reference = message)    
     else:
         start = message.content.find('[')
         end = message.content.find(']')
