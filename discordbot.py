@@ -4,10 +4,6 @@ import discord
 from dotenv import load_dotenv
 import os
 import random
-from discord.ui import Button, View
-from discord import ButtonStyle
-from discord.ext import commands
-from discord.utils import get
 load_dotenv()
 
 PREFIX = os.environ['PREFIX']
@@ -101,7 +97,7 @@ async def on_message(message):
               description=Text.strip(),
               colour=discord.Color.purple()
           )
-          await message.channel.send(embed=embed)
+          await channel.send(embed=embed)  
     elif message.content.startswith('%동전'):
           randomNum = random.randrange(1,1000)
           randomNum = randomNum % 2
