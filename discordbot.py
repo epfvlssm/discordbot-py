@@ -4,6 +4,8 @@ import discord
 from dotenv import load_dotenv
 import os
 import random
+from discord.ext import commands
+from discord.utils import get
 load_dotenv()
 
 PREFIX = os.environ['PREFIX']
@@ -60,7 +62,7 @@ async def on_message(message):
         )
           await message.channel.send(embed=embed, reference = message)        
     elif message.content.startswith("❈복권"):
-          channel = client.get_channel(1077179159694016583)
+          channel = client.get_channel(1077114613981794335)
           Text = ""
           number = [1, 2, 3, 4, 5, 6, 7] # 배열크기 선언해줌
           count = 0
