@@ -60,6 +60,7 @@ async def on_message(message):
         )
           await message.channel.send(embed=embed, reference = message)        
     elif message.content.startswith("❈복권"):
+          channel = client.get_channel(1077179159694016583)
           Text = ""
           number = [1, 2, 3, 4, 5, 6, 7] # 배열크기 선언해줌
           count = 0
@@ -94,7 +95,7 @@ async def on_message(message):
           embed = discord.Embed(
               title="카두케우스 복권",
               description=Text.strip(),
-              colour=discord.Color.red()
+              colour=discord.Color.purple()
           )
           await message.channel.send(embed=embed)
     elif message.content.startswith('%동전'):
