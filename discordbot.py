@@ -261,7 +261,7 @@ async def on_message(message):
         
           embed.add_field(name = Text, value = Text2, inline=False)
           await message.channel.send(embed=embed, reference = message)
-     elif message.content.startswith('%퀘스트'):
+    elif message.content.startswith('%퀘스트'):
           QuestNum = random.randrange(1,1000)
           QuestNum = fortuneNum % 6
 
