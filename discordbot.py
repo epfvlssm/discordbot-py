@@ -255,10 +255,10 @@ async def on_message(message):
           elif SasaNum == 30:
             Text = '이것은?!'
             Text2 = '사사거리를 구경하며 돌아다니다가 보라색 상자를 찾았어. 이건…! 신성 주간에만 발견할 수 있는 사사거리의 상자. 일명 ***사사상자***야!'
-
           embed = discord.Embed(
                 title = "신나는 사사거리 탐방"
-          )          
+                ) 
+        
           embed.add_field(name = Text, value = Text2, inline=False)
           await message.channel.send(embed=embed, reference = message)        
     else:
