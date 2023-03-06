@@ -208,8 +208,8 @@ async def on_message(message):
           # SasaNum = SasaNum % 32
           SasaNum = 2
         
-          Text = ""
-          Text2 = ""  
+          Text = ''
+          Text2 = ''  
 
           if SasaNum == 0:
             Text = '이것은?!'
