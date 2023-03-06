@@ -214,7 +214,7 @@ async def on_message(message):
           if SasaNum == 0:
             Text = '이것은?!'
             Text2 = '사사거리를 구경하며 돌아다니다가 보라색 상자를 찾았어. 이건…! 신성 주간에만 발견할 수 있는 사사거리의 상자. 일명 ***사사상자***야!'
-          elif Sasanum <= 1 and SasaNum >= 3:
+          elif SasaNum <= 1 and SasaNum >= 3:
             Text = '두 개의 물병 조각상'
             Text2 = '‘신전 북쪽을 지키듯 서 있는 석상이야. 이렇게 보니 감회가 새로운걸. 볼 때마다 정말 액체를 그대로 돌로 굳힌 것 같아 감탄하게 되네. 조각상을 구경하고 ***두 개의 물병 조각상 띠부씰***을 얻었어.'
           elif SasaNum < 3 and SasaNum >= 5:
