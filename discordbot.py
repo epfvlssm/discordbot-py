@@ -207,9 +207,6 @@ async def on_message(message):
           SasaNum = random.randrange(1,1000)
           SasaNum = SasaNum % 32
         
-          Text = ''
-          Text2 = ''  
-
           if SasaNum == 0:
             Text = '이것은?!'
             Text2 = '사사거리를 구경하며 돌아다니다가 보라색 상자를 찾았어. 이건…! 신성 주간에만 발견할 수 있는 사사거리의 상자. 일명 ***사사상자***야!'
