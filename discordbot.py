@@ -204,9 +204,8 @@ async def on_message(message):
           embed.add_field(name = Text, value = Text2, inline=False)
           await message.channel.send(embed=embed, reference = message)
     elif message.content.startswith('%탐방'):
-          # SasaNum = random.randrange(1,1000)
-          # SasaNum = SasaNum % 32
-          SasaNum = 2
+          SasaNum = random.randrange(1,1000)
+          SasaNum = SasaNum % 32
         
           Text = ''
           Text2 = ''  
