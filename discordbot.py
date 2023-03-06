@@ -263,7 +263,7 @@ async def on_message(message):
           await message.channel.send(embed=embed, reference = message)
     elif message.content.startswith('%퀘스트'):
           QuestNum = random.randrange(1,1000)
-          QuestNum = fortuneNum % 6
+          QuestNum = QuestNum % 6
 
           if QuestNum == 0:
             Text = '[카두케우스 퀘스트-1] 아기폼폼 씻기기 (0/1)'
