@@ -206,6 +206,9 @@ async def on_message(message):
     elif message.content.startswith('%탐방'):
           SasaNum = random.randrange(1,1000)
           SasaNum = SasaNum % 31
+        
+          Text = ""
+          Text2 = ""  
 
           if SasaNum == 0:
             Text = '이것은?!'
