@@ -44,6 +44,9 @@ async def on_message(message):
              '행운 기원 팔찌', '기념품가게 팔찌', '향수', '화상 연고', '의료용 안대', '목화 다발', '자개 장식', '공단 리본', '레이스가 달린 원피스', '물감', '긴 천',
              '편지지 세트', '알록달록한 펜', '애벌레 인형', '발냄새 나는 양말', '새하얀 깃털', '붕대', '누가 사탕', '민트초코맛 치약', '피젯큐브', '들장미 화관', '은색 반지', '네모나고 반듯한 돌', '카라쿠리 퍼즐', '종이 비행기', '계약서와 도장', '크롭티', '무지개색 조개껍데기', '묵주', '팬 라이트', '화려한 귀걸이', '별모양 드림캐쳐', '십자수 세트', '초콜릿 쿠키 만들기 키트', '도수가 높은 안경']))  # 1~100 랜덤 선택 (1d100)
         await message.channel.send(f'달각 달각, 가챠 기계에서 나온 것은…… <{dice_result}>…!', reference=message)  # 답장 o
+    elif message.content.startswith('%사사상자'): # 메세지가 %사사상자 로 시작하는 경우
+        dice_result = str(random.choice(['먼지, 카두케우스의 날개에서 떨어진 깃털, 가챠 1회 무료 이용권, 슬롯머신 1회 무료 이용권(1텔로 적용), 복권 1회 무료 이용권, 카두케우스 목베개, 실물 사이즈 카두케우스 인형, 폼폼 인형(20cm), 프로네시스 기념 주화, 소프로시네 기념 주화, 필라테스복 (폼폼용), 체육복(폼폼용), 석류컵케이크 모자(폼폼용), 선글라스(폼폼용), 앞치마(폼폼용), 요리사 모자(폼폼용)'])) # 1~100 랜덤 선택 (1d100)
+        await message.channel.send(f'보라색 상자를 열자…… 안에 들어있던 것은…! <{dice_result}>입니다.', reference=message) # 답장 o        
     elif message.content.startswith('%슬롯머신'):
           SlotMachine = [ '🐋', '🍺', '🍇', '🃏','7️⃣', ':tomato:', ':strawberry:', ':eggplant:', ':apple:', ':pineapple:', ':lemon:', ':melon:', ':kiwi:', ':snake:', ':hatched_chick:', ':gift:', ':star2:', ':tangerine:']
           sFirst = random.choice(SlotMachine)
