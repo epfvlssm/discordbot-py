@@ -288,7 +288,61 @@ async def on_message(message):
                 )
           
           embed.add_field(name = Text, value = Text2, inline=False)
-          await message.channel.send(embed=embed, reference = message)    
+          await message.channel.send(embed=embed, reference = message)
+    
+        elif message.content.startswith('%조미료'):
+          cSeasoning = ['케우스의 눈물', '카두스의 눈물', '소금', '설탕', '고춧가루', '간장', '된장', '고추장', '식초', '맛술', '폼폼의 눈물', '꿀', '참기름', '들기름', '올리브유', '산초', '다시마', '초콜릿', '커피', '고수', '계피', '치킨스톡', '강황', '굴소스', '까나리액젓', '카두스의 비늘', '케우스의 비늘', '나오스산 성수']
+          sDraw = random.choice(cSeasoning)
+          Text = ""
+          Text =Text + sDraw
+
+          embed = discord.Embed(
+             description = "당신의 손에 쥐여진 조미료는……",
+             colour = discord.Color.blue()
+          )
+          embed.add_field(name = Text, value=' ', inline=False)
+          await message.channel.send(embed=embed, reference = message)
+          
+    elif message.content.startswith('%주방'):
+          cKitchen = ['카두케우스 식사예절 포토카드', '카두케우스가 새겨진 단추', '텔인척 하는 운세종이', '오들오들 떨고 있는 폼폼 "폼폼폼… 폼폼폼포옴폼… (저는 맛이 없어요… 집에는 토끼같은 가족들이 기다리고 있고…)"', '거울', '선글라스', '주사위', '요리사 폼폼이 정성을 다해 작은 손으로 휘핑을 돌려 만든 생크림-완제-', '밀면', '쫄면', '일짱이 되고 싶었던 소의 고기', '소고기', '양고기', '베타산 쌀', '엡실론산 산양 치즈', '델타산 랍스터', '참깨', '튀김가루', '검은 목이버섯', '밀가루', '애호박']
+          sDraw = random.choice(cKitchen)
+          Text = ""
+          Text =Text + sDraw
+
+          embed = discord.Embed(
+             description = "당신이 주방에서 찾아낸 요리 재료는……",
+             colour = discord.Color.blue()
+          )
+          embed.add_field(name = Text, value=' ', inline=False)
+          await message.channel.send(embed=embed, reference = message)
+
+    elif message.content.startswith('%식물원'):
+          cGarden = ['누르면 노래하는 움직이는 인형 (텔로스 님을 찬양하는 노래가 나온다.)', '사사상자 (유효기간만료)', '훌쩍이는 폼폼 "폼포옴… 폼폼… 폼폼폼…. (우아앙… 훌쩍… 살려주세요….)"', '자전거 바퀴', '카두케우스 피규어', '1 텔', '구두', '당근', '파프리카', '피망', '아스파라거스', '레몬', '정원사 폼폼에게 키워주셔서 감사하다는 인사를 드리고 싶었던 감자', '치커리', '양상추', '오이', '가지', '완두콩', '검은콩', '딸기', '포도']
+          sDraw = random.choice(cGarden)
+          Text = ""
+          Text =Text + sDraw
+
+          embed = discord.Embed(
+             description = "당신이 식물원에서 찾아낸 요리 재료는……",
+             colour = discord.Color.blue()
+          )
+          embed.add_field(name = Text, value=' ', inline=False)
+          await message.channel.send(embed=embed, reference = message)         
+
+    elif message.content.startswith('%해안가'):
+          cBeach = ['장화', '상자', '짱돌', '맷돌', '당황한 폼폼 "포, 포옴-폼! (자, 잡혀버렸다아..!)"', '카두케우스 아크릴스탠드', '드넓은 바다를 헤엄치고 싶었던 참치', '거꾸로 강을 거슬러 올라가고 싶었던 연어', '정어리', '산낙지', '장어', '젤라틴', '호두', '칠면조 고기', '찹쌀가루', '요플레', '배', '타조알', '옥수수', '사과', '늙은 호박']
+          sDraw = random.choice(cBeach)
+          Text = ""
+          Text =Text + sDraw
+
+          embed = discord.Embed(
+             description = "당신이 바다에서 건져낸 요리 재료는……",
+             colour = discord.Color.blue()
+          )
+          embed.add_field(name = Text, value=' ', inline=False)
+          await message.channel.send(embed=embed, reference = message)   
+
+    
     else:
         start = message.content.find('[')
         end = message.content.find(']')
