@@ -290,7 +290,7 @@ async def on_message(message):
           embed.add_field(name = Text, value = Text2, inline=False)
           await message.channel.send(embed=embed, reference = message)
     
-        elif message.content.startswith('%조미료'):
+    elif message.content.startswith('%조미료'):
           cSeasoning = ['케우스의 눈물', '카두스의 눈물', '소금', '설탕', '고춧가루', '간장', '된장', '고추장', '식초', '맛술', '폼폼의 눈물', '꿀', '참기름', '들기름', '올리브유', '산초', '다시마', '초콜릿', '커피', '고수', '계피', '치킨스톡', '강황', '굴소스', '까나리액젓', '카두스의 비늘', '케우스의 비늘', '나오스산 성수']
           sDraw = random.choice(cSeasoning)
           Text = ""
