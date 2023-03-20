@@ -342,6 +342,117 @@ async def on_message(message):
           embed.add_field(name = Text, value=' ', inline=False)
           await message.channel.send(embed=embed, reference = message)   
 
+    elif message.content.startswith('%낚시'):
+          fSize = random.randrange(0,100)
+          fishingNum = random.randrange(0,1000)
+          fishingNum = fishingNum % 35
+
+          Text = ""
+          Text2 = ""
+
+          if fishingNum == 0:
+            Text = '돌'
+            Text2 = '응?'
+          elif fishingNum == 1:
+            Text = '신발'
+            Text2 = '응?'
+          elif fishingNum == 2:
+            Text = '마라카스'
+            Text2 = '응? 샤카샤카'
+          elif fishingNum == 3:
+            Text = '1텔'
+            Text2 = '신난다!'
+          elif fishingNum == 4:
+            Text = '도끼(폼폼용)'
+            Text2 = '응? 호수에 던져보면 무슨 일이 있을지도?'
+          elif fishingNum == 5:
+            Text = '요리재료 잡으러 간 폼폼'
+            Text2 = '“폼폼폼폼폼.” (수고하세요.)'
+          elif fishingNum == 6:
+            Text = '신선 폼폼'
+            Text2 = '두 개의 도끼(폼폼용)를 양 손에 든 신선 수염을 단 폼폼이 물었어. “폼 폼폼폼폼, 폼 폼폼폼폼.” (이 금도끼가 네 도끼냐, 이 은도끼가 네 도끼냐.)'
+          elif fishingNum == 7:
+            Text = '목욕하던 폼폼'
+            Text2 = '“폼!! 폼폼!!!” (꺄아아악!! 파렴치하아안!!!)'
+          elif fishingNum == 8:
+            Text = '클리오네'
+            Text2 = '응? 여긴 호수인데?'
+          elif fishingNum == 9:
+            Text = '초롱아귀'
+            Text2 = '응? 여긴 호수인데?'
+          elif fishingNum == 10:
+            Text = '고래상어'
+            Text2 = '응? 여긴 호수인데? 아무튼 월척이야! 야호!'
+            fSize = fSize + 150
+          elif fishingNum == 11:
+            Text = '비단잉어'
+          elif fishingNum == 12:
+            Text = '금붕어'
+          elif fishingNum == 13:
+            Text = '송사리'
+          elif fishingNum == 14:
+            Text = '가재'
+          elif fishingNum == 15:
+            Text = '자라'
+          elif fishingNum == 16:
+            Text = '늑대거북'
+          elif fishingNum == 17:
+            Text = '미꾸라지'
+          elif fishingNum == 18:
+            Text = '메기'
+          elif fishingNum == 19:
+            Text = '가물치'
+          elif fishingNum == 20:
+            Text = '빙어'
+          elif fishingNum == 21:
+            Text = '산천어'
+          elif fishingNum == 22:
+            Text = '금송어'
+          elif fishingNum == 23:
+            Text = '연어'
+          elif fishingNum == 24:
+            Text = '네온테트라'
+          elif fishingNum == 25:
+            Text = '피라냐'
+          elif fishingNum == 26:
+            Text = '샴투어'
+          elif fishingNum == 27:
+            Text = '민물천사고기'
+          elif fishingNum == 28:
+            Text = '엔드리케리'
+          elif fishingNum == 29:
+            Text = '왕연어'
+            fSize = fSize + 60
+          elif fishingNum == 30:
+            Text = '피라루쿠'
+            fSize = fSize + 70
+          elif fishingNum == 31:
+            Text = '철갑상어'
+            fSize = fSize + 100
+          elif fishingNum == 32:
+            Text = '피라미'
+          elif fishingNum == 33:
+            Text = '붕어'
+          elif fishingNum == 34:
+            Text = '잉어'
+
+          if fSize >= 60 and fishingNum > 10 :
+            Text2 = '야호! 월척이야!'
+
+          if fishingNum >=0 and fishingNum < 8:
+            Text = Text + "을 낚았다!"
+          else:
+            Text = Text + "을 낚았다! "
+            Text = Text + "무려 "
+            Text = Text + str(fSize)
+            Text = Text + "cm!"
+
+          embed = discord.Embed(
+          description = "낚싯대를 잡아당겼다…!",
+	        colour = discord.Color.blue()
+        )
+          embed.add_field(name = Text, value = Text2, inline=False)
+          await message.channel.send(embed=embed)
     
     else:
         start = message.content.find('[')
