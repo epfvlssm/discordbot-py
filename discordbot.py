@@ -440,9 +440,9 @@ async def on_message(message):
             Text2 = '야호! 월척이야!'
 
           if fishingNum >=0 and fishingNum < 8:
-            Text = Text + "을 낚았다!"
+            Text = Text + "을(를) 낚았다!"
           else:
-            Text = Text + "을 낚았다! "
+            Text = Text + "을(를) 낚았다! "
             Text = Text + "무려 "
             Text = Text + str(fSize)
             Text = Text + "cm!"
