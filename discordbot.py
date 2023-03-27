@@ -347,10 +347,10 @@ async def on_message(message):
           MarbleDice = random.randrange(1,6)
           MarbleDice2 = random.randrange(1,6)
 
-          Text = “”
-          Text = str(MarbleDice) + “  ” + str(MarbleDice2) 
+          Text = ""
+          Text = str(MarbleDice) + "  " + str(MarbleDice2) 
 
-          Text2 = “”
+          Text2 = ""
           Text2 = Text2 + str(MarbleDice+MarbleDice2) + “칸 이동가능”
 
           embed = discord.Embed(
