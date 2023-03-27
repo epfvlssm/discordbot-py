@@ -351,7 +351,7 @@ async def on_message(message):
           Text = str(MarbleDice) + "  " + str(MarbleDice2) 
 
           Text2 = ""
-          Text2 = Text2 + str(MarbleDice+MarbleDice2) + “칸 이동가능”
+          Text2 = Text2 + str(MarbleDice+MarbleDice2) + "칸 이동가능"
 
           embed = discord.Embed(
           description = Text ,
