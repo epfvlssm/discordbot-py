@@ -340,7 +340,26 @@ async def on_message(message):
              colour = discord.Color.blue()
           )
           embed.add_field(name = Text, value=' ', inline=False)
-          await message.channel.send(embed=embed, reference = message)   
+          await message.channel.send(embed=embed, reference = message)
+			
+    elif message.content.startswith('%카케마불'):
+
+          MarbleDice = random.randrange(1,6)
+          MarbleDice2 = random.randrange(1,6)
+
+          Text = “”
+          Text = str(MarbleDice) + “  ” + str(MarbleDice2) 
+
+          Text2 = “”
+          Text2 = Text2 + str(MarbleDice+MarbleDice2) + “칸 이동가능”
+
+          embed = discord.Embed(
+          description = Text ,
+          colour = discord.Color.yellow()
+         )
+          embed.add_field(name = Text2, value=' ', inline=False)
+          await message.channel.send(embed=embed, reference = message)
+
 
     elif message.content.startswith('%낚시'):
           fSize = random.randrange(0,100)
