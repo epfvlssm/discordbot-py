@@ -45,7 +45,7 @@ async def on_message(message):
              '편지지 세트', '알록달록한 펜', '애벌레 인형', '발냄새 나는 양말', '새하얀 깃털', '붕대', '누가 사탕', '민트초코맛 치약', '피젯큐브', '들장미 화관', '은색 반지', '네모나고 반듯한 돌', '카라쿠리 퍼즐', '종이 비행기', '계약서와 도장', '크롭티', '무지개색 조개껍데기', '묵주', '팬 라이트', '화려한 귀걸이', '별모양 드림캐쳐', '십자수 세트', '초콜릿 쿠키 만들기 키트', '도수가 높은 안경', '색이 바랜 머리끈', '존재도 의심스럽다는 10권 한정판 마공학 전문 서적', '저주 부적', '손목보호대', '빈 계약서 양식', '오선지', '빈 액자', '진통제', '정통 메이드복', '귀여운 스티커 모음', '삭고 바랜 연구 보고서', '청사초롱', '나비 인형', '딸기 탕후루 만들기 키트', '철학책 [죽음은 무엇인가]', '다이아 넥타이 핀', '찢어진 사진이 들어있는 캡슐', '낡은 고서 페이지', '시마니드 문양 팬던트', '보물지도']))  # 1~100 랜덤 선택 (1d100)
         await message.channel.send(f'달각 달각, 가챠 기계에서 나온 것은…… <{dice_result}>…!', reference=message)  # 답장 o
     elif message.content.startswith('%사사상자'): # 메세지가 %황금상자 로 시작하는 경우
-        dice_result = str(random.choice(['먼지', '카두케우스의 날개에서 떨어진 깃털', '가챠 1회 무료 이용권', '슬롯머신 1회 무료 이용권(1텔로 적용)', '복권 1회 무료 이용권', '카두케우스 목베개', '실물 사이즈 카두케우스 인형', '폼폼 인형(20cm)', '안드레이아 기념 주화', '필라테스복 (폼폼용)', '체육복(폼폼용)', '석류컵케이크 모자(폼폼용)', '선글라스(폼폼용)', '앞치마(폼폼용)', '요리사 모자(폼폼용)'])) # 1~100 랜덤 선택 (1d100)
+        dice_result = str(random.choice(['먼지', '가챠 1회 무료 이용권', '슬롯머신 1회 무료 이용권(1텔로 적용)', '복권 1회 무료 이용권', '안드레이아 기념 주화'])) # 1~100 랜덤 선택 (1d100)
         await message.channel.send(f'황금빛 상자를 열자…… 안에 들어있던 것은…! <{dice_result}>입니다.', reference=message) # 답장 o        
     elif message.content.startswith('%슬롯머신'):
           SlotMachine = [ '🐋', '🍺', '🍇', '🃏','7️⃣', ':tomato:', ':strawberry:', ':eggplant:', ':apple:', ':pineapple:', ':lemon:', ':melon:', ':kiwi:', ':snake:', ':hatched_chick:', ':gift:', ':star2:', ':tangerine:']
@@ -279,6 +279,83 @@ async def on_message(message):
         
           embed.add_field(name = Text, value = Text2, inline=False)
           await message.channel.send(embed=embed, reference = message)
+	
+    elif message.content.startswith('%%폼폼열쇠'):
+          KeyNum = random.randrange(0,1000)
+          KeyNum  = KeyNum % 20
+          Text = " "
+          Text2 = " "
+       
+          if KeyNum == 0:
+            Text = '병원비 지불'
+            Text2 = '병원에서 건강진단을 받았습니다. 병원비 [5만 온]을 람다 섹터 소유주에게 납부합니다. 람다 섹터의 소유자가 없다면 알파에 납부합니다.'
+          elif KeyNum == 1:
+            Text = '복권 당첨'
+            Text2 = '축하합니다! 복권에 당첨되었습니다. 당첨금 [25만 온]을 알파 섹터에서 받습니다.'
+          elif KeyNum == 2:
+            Text = '교도소 탈출'
+            Text2 = '숟가락을 얻었습니다. 교도소에 갇혀 있을 때 사용할 수 있습니다. 1회 사용 후 소멸합니다. 타인에게 팔 수 있습니다. 거래시 가격 협상은 자유롭게 해주세요.'
+          elif KeyNum == 3:
+            Text = '교도소'
+            Text2 = '이단 의심을 받았습니다. 교도소로 곧장 가세요. 출발지를 지나더라도 월급을 받을 수 없습니다.'
+          elif KeyNum == 4:
+            Text = '20주년 기념 공연'
+            Text2 = '뮤 섹터로 가세요. 뮤 섹터 소유주에게 통행료를 지불합니다. 출발지를 지나갈 경우, 월급을 받습니다.'
+          elif KeyNum == 5:
+            Text = '에타 유학'
+            Text2 = '학교 등록금을 내세요. 등록금 [10만 온]을 에타 섹터 소유주에게 납부합니다. 에타 섹터의 소유자가 없다면 알파 섹터에 납부합니다.'
+          elif KeyNum == 6:
+            Text = '이동'
+            Text2 = '뒤로 세 칸 옮기세요.'
+          elif KeyNum == 7:
+            Text = '우대권'
+            Text2 = '상대방이 소유한 장소에 통행료 없이 머무를 수 있습니다. 1회 사용 후 반납합니다. 중요한 순간에 사용하세요.'
+          elif KeyNum == 8:
+            Text = '텔레포트 장치'
+            Text2 = '오미크론 섹터의 텔레포트를 타고 카파 섹터로 가세요. 텔레포트 장치 소유주에게 탑승료를 지불합니다. 출발지를 지나갈 경우 월급을 받습니다.'
+          elif KeyNum == 9:
+            Text = '폼폼크루즈 여행'
+            Text2 = '폼폼크루즈를 타고 엡실론 섹터로 가세요. 폼폼크루즈 소유주에게 탑승료를 지불합니다. 출발지를 지나갈 경우 월급을 받습니다.'
+          elif KeyNum == 10:
+            Text = '대륙일주 초대권'
+            Text2 = '축하합니다. 현재 위치에서부터 한 바퀴 돌아오세요. 다른 곳으로 갈 수 없으며, 출발지를 지나가면서 월급을 받습니다. 신의 축복을 지나가면서 모아놓은 헌금을 받습니다.'
+          elif KeyNum == 11:
+            Text = '이달의 우수 신도 수상'
+            Text2 = '당신은 텔로스 신을 위하여 공헌하였습니다. 수상금 [30만 온]을 알파 섹터에서 받습니다.'
+          elif KeyNum == 12:
+            Text = '생일 축하'
+            Text2 = '모두에게 생일 축하를 받으세요. 생일 축하합니다! 전원에게 축하금 [1만 온]씩 받습니다.'
+          elif KeyNum == 13:
+            Text = '장학금 혜택'
+            Text2 = '장학금을 받으세요. 장학금 [10만 온]을 에타 섹터 소유주에게서 받습니다. 에타 섹터의 소유자가 없다면 알파에서 받습니다.'
+          elif KeyNum == 14:
+            Text = '건물 수리비 지불'
+            Text2 = '정기적으로 건물을 수리하여야 합니다. 수리비 [10만 온]을 요타 섹터 소유주에게 납부하세요. 요타 섹터의 소유자가 없다면 알파 섹터에 납부합니다.'
+          elif KeyNum == 15:
+            Text = '신의 축복'
+            Text2 = '신의 축복으로 가세요. 출발지를 지나갈 경우 월급을 받습니다.'
+          elif KeyNum == 16:
+            Text = '대륙여행 초청장'
+            Text2 = '오미크론 섹터에서 대륙여행 초정장이 왔습니다. 오미크론 섹터로 가세요. 무료이므로 텔레포트 장치 소유주에게 탑승료를 지불하지 않습니다. 출발지를 지나갈 경우 월급을 받습니다.'
+          elif KeyNum == 17:
+            Text = '헌금'
+            Text2 = '신의 축복에 헌금 [20만 온]을 납부하세요.'
+          elif KeyNum == 18:
+            Text = '관광 여행'
+            Text2 = '카두케우스 랜드로 가세요. 카두케우스 랜드 소유주에게 통행료를 지불합니다. 출발지를 지나갈 경우 월급을 받습니다.'
+          elif KeyNum == 19:
+            Text = '잭팟'
+            Text2 = '축하합니다! 크사이 섹터의 카지노에서 잭팟을 터트렸습니다. [50만 온]을 알파 섹터에서 받습니다.'
+
+          embed = discord.Embed(
+          description = "폼폼열쇠",
+          colour = discord.Color.red()
+         )
+
+          embed.add_field(name = Text, value = Text2, inline=False)
+          await message.channel.send(embed=embed)
+	
+	
     elif message.content.startswith('%퀘스트'):
           QuestNum = random.randrange(1,1000)
           QuestNum = QuestNum % 6
