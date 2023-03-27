@@ -280,7 +280,7 @@ async def on_message(message):
           embed.add_field(name = Text, value = Text2, inline=False)
           await message.channel.send(embed=embed, reference = message)
 	
-    elif message.content.startswith('%%폼폼열쇠'):
+    elif message.content.startswith('%폼폼열쇠'):
           KeyNum = random.randrange(0,1000)
           KeyNum  = KeyNum % 20
           Text = " "
@@ -450,7 +450,7 @@ async def on_message(message):
 
           embed = discord.Embed(
           description = Text ,
-          colour = discord.Color.yellow()
+          colour = discord.Color.purple()
          )
           embed.add_field(name = Text2, value=' ', inline=False)
           await message.channel.send(embed=embed, reference = message)
