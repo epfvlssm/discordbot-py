@@ -426,7 +426,7 @@ async def on_message(message):
             Text2 = '이런. 크사이의 카지노에서 밑장을 빼다 걸렸습니다. 벌금으로 [50만 온]을 크사이 섹터 소유주에게 지불합니다.
 
           embed = discord.Embed(
-          description = "카두케우스열쇠",
+          description = "카케열쇠",
           colour = discord.Color.purple()
          )
 
