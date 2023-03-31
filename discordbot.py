@@ -355,7 +355,7 @@ async def on_message(message):
           embed.add_field(name = Text, value = Text2, inline=False)
           await message.channel.send(embed=embed)
 
-     elif message.content.startswith('%카케열쇠'):
+    elif message.content.startswith('%카케열쇠'):
           KeyNum = random.randrange(0,1000)
           KeyNum  = KeyNum % 21
           Text = " "
