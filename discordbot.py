@@ -541,7 +541,7 @@ async def on_message(message):
         Text = str(HighLow + HighLow2)
 
         embed = discord.Embed(
-        description = "" ,
+        description = "높은 수일까, 낮은 수일까? 결과는... " ,
         colour = discord.Color.purple()
         )
 
