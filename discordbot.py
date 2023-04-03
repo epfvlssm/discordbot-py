@@ -423,10 +423,10 @@ async def on_message(message):
             Text2 = '카두케우스 랜드로 가세요. 카두케우스 랜드 소유주에게 통행료와 기념품 구입비 [20만 온]을 지불합니다. 출발지를 지나갈 경우 월급을 받습니다. '
           elif KeyNum == 20:
             Text = '밑장빼기'
-            Text2 = '이런. 크사이의 카지노에서 밑장을 빼다 걸렸습니다. 벌금으로 [50만 온]을 크사이 섹터 소유주에게 지불합니다.'
+            Text2 = '이런. 크사이의 카지노에서 밑장을 빼다 걸렸습니다. 벌금으로 [50만 온]을 크사이 섹터 소유주에게 지불합니다.
 
           embed = discord.Embed(
-          description = "카두케우스 열쇠",
+          description = "카케열쇠",
           colour = discord.Color.purple()
          )
 
