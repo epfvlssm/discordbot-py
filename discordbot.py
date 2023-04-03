@@ -534,19 +534,18 @@ async def on_message(message):
 		
     elif message.content.startswith('%하이로우'):
 
-         HighLow = random.randrange(1,7)
-         HighLow2 = random.randrange(1,7)
+          HighLow = random.randrange(1,7)
+          HighLow2 = random.randrange(1,7)
 
-         Text = ""
-	 Text = str(HighLow + HighLow2)
+          Text = ""
+	  Text = str(HighLow + HighLow2)
 
-         embed = discord.Embed(
-         description = "" ,
-         colour = discord.Color.purple()
+          embed = discord.Embed(
+          description = "" ,
+          colour = discord.Color.purple()
          )
-         embed.add_field(name = Text, value=' ', inline=False)
-         await message.channel.send(embed=embed, reference = message)
-
+          embed.add_field(name = Text, value=' ', inline=False)
+          await message.channel.send(embed=embed, reference = message)
 
     elif message.content.startswith('%낚시'):
           fSize = random.randrange(0,100)
